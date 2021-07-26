@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'warnings';
+@import 'extend';
+$font-stack: Verdana, Garamond;
+
+body
+{
+    font-family: $font-stack;
+}
+
+#welcomeText
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 300%;
+    color:whitesmoke;
+    text-align: center;
+}
+
+#main-content
+{
+    background-color: $mainContentColor;
+    .card-body
+    {
+        background-color: $mainContentSecondaryColor;
+        color: whitesmoke;
+    }
+}
+
+#main-description
+{
+    h3
+    {
+        font-weight: bold;
+        color:whitesmoke;
+    }
+    p
+    {
+        color:white;
+        text-align: justify;
+    }
+}
+
+#footer
+{
+    p,a
+    {
+        color:$mainContentColor;
+    }
+
+}
+
+#whiteWarning
+{
+    .modal-body
+    {
+        @include warningStyle;
+    }
+    
+}
+
+#redWarning
+{
+    .modal-body
+    {
+        @include warningStyle($color: red);
+    }
+    
+}
+
+#blueWarning
+{
+    .modal-body
+    {
+        @include warningStyle($color:lightblue);
+        @extend %italic-arial;
+    }
+    
+}
